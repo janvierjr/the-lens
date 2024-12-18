@@ -1,3 +1,273 @@
-h1 {
-  color: red;
+/* Imports ## */
+/* Imports ## Agenda - Adobe Typeface */
+@import url("https://use.typekit.net/mom7mno.css");
+/* Imports ## Unbounded - Google Typeface */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Unbounded:wght@200..900&display=swap');
+
+
+/*  Root Variables ## */
+
+:root {
+  /* Colors */
+  --text-white-color: #ffffff;
+  --primary-white-color: #FDFBF4 !important;
+  --primary-black-color: #09090C !important;
+  --primary-gray-color: #B6B7B3 !important;
+  --hover-yellow-color: #FFD800;
+  --cta-green-color: #7AC74F;
+  --cta-red-color: #FF6C52;
+  --background-gold-color: #E8DDAE;
+  --background-gray-color: #E7E7E7;
+  --theme-color-against-primary: #09090C !important;
+
+  /* Fonts */
+  --theme-font-heading: "agenda-ultra-condensed", sans-serif;
+  --theme-font-button: "Unbounded", sans-serif;
+
+  /* Customizations */
+  --border-style-dotted-black: 2px dotted #09090C;
+  --border-style-black: 2px solid #09090C;
+  --border-radius-button: 40px;
+  --animation-timing: .4s ease;
+}
+
+/* CSS Reset ## */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--theme-font-heading);
+  text-wrap: balance;
+}
+
+/* 9. Links inherit parent color with specified underline offset*/
+a {
+  color: inherit;
+  text-underline-offset: .2rem;
+}
+
+/* Global ## */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--primary-white-color) !important;
+}
+
+#page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+/* Utility Classes ## */
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 90vw;
+  width: 1200px;
+}
+
+
+/* Links ## */
+/* Links ## Buttons */
+a.btn-primary {
+  font-family: var(--theme-font-button);
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: var(--border-style-black);
+  border-radius: var(--border-radius-button);
+  padding: .75rem 1.25rem;
+  margin: auto 0;
+  text-align: center;
+  transition: background-color var(--animation-timing);
+}
+
+a.btn-primary:hover,
+a.btn-primary:active,
+a.btn-primary:focus-visible {
+  background-color: var(--hover-yellow-color);
+}
+
+
+/* Typography ## */
+/* Typography ## Headers */
+.small-text {
+  font-size: smaller;
+}
+
+h1,
+.h1 {
+  font-size: 4rem;
+}
+
+.entry-title,
+h2,
+.h2 {
+  font-size: 3rem;
+}
+
+
+/* Top Header ## */
+.top-header-contain .wrapper {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.top-header-contain {
+  background-color: var(--primary-black-color) !important;
+  color: var(--primary-white-color) !important;
+  min-height: 3em;
+  padding: .5rem 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.top-header-contain  span {
+  vertical-align: text-top;
+  margin-right: .5rem;
+}
+
+.top-header-contain a {
+  font-family: var(--theme-font-button);
+  font-size: small;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: var(--animation-timing);
+}
+
+.top-header-contain a:hover,
+.top-header-contain a:active,
+.top-header-contain a:focus-visible {
+  color: var(--hover-yellow-color)
+}
+
+.top-header-contain a::after {
+  content: ' | ';
+  color: var(--text-white-color);
+  font-weight: 200;
+  margin: .5rem;
+}
+
+.top-header-contain a:last-child::after {
+  content: none;
+}
+
+/* Middle Header ## */
+/* Middle Header ## Site Logo */
+.middle-header-contain {
+  padding: 2em 0;
+}
+
+.site-branding .site-logo {
+  transition: filter var(--animation-timing);
+}
+
+.site-branding .site-logo:hover,
+.site-branding .site-logo:active,
+.site-branding .site-logo:focus-visible {
+  filter: opacity(.8);
+}
+
+.middle-header-contain .buttons-contain {
+  display: flex;
+  flex-direction: row;
+  column-gap: .75rem;
+  width: max-content;
+}
+
+
+/* Navigation ## */
+/* Navigation ## Primary Nav */
+/* Navigation ## Hamburger Button */
+.btn-hamburger {
+  width: 3rem;
+  height: 3rem;
+  margin: auto 0;
+  border-radius: 100%;
+  background-color: var(--primary-black-color);
+  transition: filter var(--animation-timing);
+}
+
+.btn-hamburger:hover,
+.btn-hamburger:focus-visible {
+  filter: opacity(.8);
+}
+
+/* Navigation ## Mega Menu */
+
+
+/* Media Queries ## */
+.desktop-only {
+  display: none;
+}
+
+@media only screen and (min-width: 782px) {
+  .desktop-only {
+    display: inherit;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .desktop-only {
+    display: inherit;
+  }
 }
