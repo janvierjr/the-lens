@@ -27,6 +27,7 @@
 
   /* Customizations */
   --border-style-dotted-black: 2px dotted #09090C;
+  --border-style-dotted-white: 2px dotted #ffffff;
   --border-style-black: 2px solid #09090C;
   --border-style-white: 2px solid #ffffff;
   --border-radius-button: 40px;
@@ -414,16 +415,19 @@ nav.hamburger-contain {
 
 /* Navigation ## Mega Menu */
 .offcanvas-mega-menu {
-  position: fixed;
+  position: absolute;
+  visibility: hidden;
   top: 0;
   color: var(--primary-white-color);
   min-height: 100vh;
   min-height: 100svh;
   width: 100%;
   padding-top: 0em;
-  transform:  translate(0%, 2%);
-  transition-property: translate;
-  transition: .6s ease;
+  transform:  scale(1) translate(0%, 2%);
+  transition-property: transform;
+  transition-duration: .6s;
+  transition-timing-function: ease;
+  z-index: 99;
 }
 
 
@@ -435,8 +439,10 @@ nav.hamburger-contain {
   border-radius: 100%;
   width: 100%;
   aspect-ratio: 1/1;
-  transform: scale(.5) translate(200%, -250%);
-  transition: .6s ease;
+  transform: scale(.75) translate(200%, -250%);
+  /* transition-property: transform;
+    transition-duration: 1.6s;
+    transition-timing-function: ease; */
 }
 
 .offcanvas-mega-menu > * {
@@ -444,21 +450,27 @@ nav.hamburger-contain {
   visibility: hidden;
   transition-property: opacity, visibility;
   transition-duration: .4s;
-  transition-timing-function: linear;
+  transition-timing-function: ease;
 }
 
 .offcanvas-circle-expand.active {
-  transform: scale(2.5) translate(0%, 0%);
+  transform: scale(3) translate(0%, 0%);
+  /* transition-property: transform; */
+  /* transition-duration: .6s;
+  transition-timing-function: ease; */
   transition-property: transform;
-  /* transition-duration: .6s; */
-  transition-timing-function: ease;
+    transition-duration: .6s;
+    transition-timing-function: ease;
 
 }
 
 .offcanvas-mega-menu.active {
-  border-radius: 0% 0% 0% 0%;
+  border-radius: 0%;
   transform: scale(1) translate(0%, 0%);
   color: var(--primary-white-color);
+  /* transition-property: transform; */
+    transition-duration: .6s;
+    transition-timing-function: ease;
   /* background-color: var(--primary-black-color); */
 
 }
@@ -467,6 +479,13 @@ nav.hamburger-contain {
   opacity: 1;
   visibility: visible;
   /* transition-property: opacity, visibility; */
+}
+
+/* Navigation ## Mega Menu / Bottom Header */
+.dark-bg .bottom-header-contain .wrapper {
+  border-top: var(--border-style-dotted-white);
+  border-bottom: var(--border-style-dotted-white);
+  padding: .5em 0;
 }
 
 /* Media Queries ## */
