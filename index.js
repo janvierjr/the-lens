@@ -2,12 +2,16 @@ document.addEventListener('DOMContentLoaded', function () {
   // DOM ready code
   console.log('DOM is ready')
 
+  /** Update copyright date to current year */
+  const currentYear = document.querySelector('#current-year');
+  currentYear.innerHTML = new Date().getFullYear();
+
+  /** Mega Menu + Hamburger - Open and Close - Active Class Toggle function */
   const hamburgerButton = document.querySelector('.btn-hamburger');
   const offCanvasMegaMenu = document.querySelector('.offcanvas-mega-menu');
   const offCanvasCircleExpand = document.querySelector('.offcanvas-circle-expand');
   const page = document.querySelector('.page');
 
-  /** Mega Menu + Hamburger - Open and Close - Active Class Toggle function */
   const handleHamburgerButtonClick = (e) => {
     e.preventDefault();
     offCanvasCircleExpand.classList.toggle('active');
