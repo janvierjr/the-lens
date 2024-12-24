@@ -19,6 +19,8 @@
   --background-gold-color: #E8DDAE;
   --background-gray-color: #E7E7E7;
   --theme-color-against-primary: #09090C !important;
+  /* Colors - gradients - background-image */
+  --black-gray-gradient: linear-gradient(to right, #09090C 70%, #232527, #2f3233, #4d5151, #6d7170, #909491);
 
   /* Fonts */
   --theme-font-family-heading: "agenda-ultra-condensed", sans-serif;
@@ -26,11 +28,13 @@
   --theme-font-family-link: "Unbounded", sans-serif;
   --theme-font-weight-link: 500;
 
-  /* Customizations */
+  /* Border */
   --border-style-dotted-black: 2px dotted #09090C;
   --border-style-dotted-white: 2px dotted #ffffff;
   --border-style-black: 2px solid #09090C;
   --border-style-white: 2px solid #ffffff;
+
+  /* Customizations */
   --border-radius-button: 40px;
   --animation-timing: .4s ease;
   --filter-opacity: opacity(.8);
@@ -57,7 +61,7 @@ html {
 
 body {
   /* 3. Add accessible line-height */
-  line-height: 1.5;
+  line-height: 1.3;
   /* 4. Improve text rendering */
   -webkit-font-smoothing: antialiased;
 }
@@ -156,6 +160,26 @@ body {
   background-color: var(--primary-black-color);
 }
 
+.white-bg {
+  background-color: var(--primary-white-color);
+}
+
+.yellow-bg {
+  background-color: var(--hover-yellow-color);
+}
+
+.green-bg {
+  background-color: var(--cta-green-color);
+}
+
+.red-bg {
+  background-color: var(--cta-red-color);
+}
+
+.gray-bg {
+  background-color: var(--primary-gray-color);
+}
+
 /* Links ## */
 /* Links ## Buttons */
 a.btn-primary {
@@ -187,7 +211,7 @@ a.btn-primary:focus-visible {
   text-decoration: none;
   border: var(--border-style-white);
   border-radius: var(--border-radius-button);
-  padding: .75rem 1.25rem;
+  padding: .5rem 1rem;
   margin-block: auto;
   text-align: center;
   transition: background-color var(--animation-timing),
@@ -235,11 +259,42 @@ h2,
   font-size: 3rem;
 }
 
+h3,
+.h3 {
+  font-size: 2rem;
+  margin-bottom: .25rem;
+}
+
 
 .small-text {
   font-size: smaller;
 }
 
+/* Typography ## Colors */
+
+.black-text {
+  color: var(--primary-black-color);
+}
+
+.white-text {
+  color: var(--text-white-color);
+}
+
+.yellow-text {
+  color: var(--hover-yellow-color);
+}
+
+.green-text {
+  color: var(--cta-green-color);
+}
+
+.red-text {
+  color: var(--cta-red-color);
+}
+
+.gray-text {
+  color: var(--primary-gray-color);
+}
 
 /* Top Header ## */
 .top-header-contain .wrapper {
@@ -347,7 +402,7 @@ h2,
 
 .site-header .nav1 .main-menu>li {
   display: inline-block;
-  line-height: 1.25;
+  line-height: 1.2;
   margin-right: 0.5rem;
   text-decoration: none;
 }
@@ -380,8 +435,8 @@ nav.hamburger-contain {
   position: fixed;
   top: 20px;
   left: min(calc(100vw - 5.5em));
-  width: 4rem;
-  height: 4rem;
+  width: 3.5rem;
+  height: 3.5rem;
   margin: auto 0;
   border-radius: 100%;
   background-color: var(--primary-black-color);
@@ -570,8 +625,87 @@ nav.hamburger-contain {
   color: var(--hover-yellow-color);
 }
 
-/* Footer ## */
+/* Main ## */
+/* Main ## CTA banners */
+main .cta-contain {
+  width: 100vw;
+  position: relative;
+}
 
+.cta-contain.black-bg {
+  background-image: var(--black-gray-gradient);
+}
+
+.cta-content-wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  justify-content: flex-start;
+  margin-inline: auto;
+  max-width: 75vw;
+  width: 1200px;
+  padding-block: 3em;
+  z-index: 2;
+}
+
+
+.black-bg .cta-content-wrapper {
+  color: var(--text-white-color);
+}
+
+.cta-content-wrapper .cta-action-contain {
+  align-self: start;
+  min-width: 100%;
+}
+
+.cta-content-wrapper h3,
+.cta-content-wrapper .cta-title {
+  font-family: 'unbounded', sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+
+}
+
+.cta-logo-parent {
+  position: absolute;
+  /* border: 1px solid lime; */
+  overflow: hidden;
+  width: 35%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  aspect-ratio: 1/1;
+  z-index: 1;
+  pointer-events: none;
+
+}
+
+.cta-logo-parent .cta-logo {
+  opacity: .5;
+  background-image: url(/assets/imgs/the-lens-mark-gray.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 50%;
+  min-height: 15em;
+}
+
+.cta-content-wrapper p {
+  font-size: .85rem;
+  line-height: 1.2rem;
+  padding-bottom: 1em;
+  font-weight: 500;
+}
+
+.cta-content-wrapper .btn-primary {
+  text-wrap: nowrap;
+  background-color: var(--primary-black-color);
+}
+
+
+/* Footer ## */
 footer.site-footer {
   margin-top: auto;
   background-color: var(--primary-black-color);
@@ -646,7 +780,7 @@ footer .footer-top-contain {
 
 footer p {
   font-size: .85rem;
-  line-height: 1.1rem;
+  line-height: 1.2rem;
 }
 
 footer .footer-logo-link {
@@ -664,15 +798,23 @@ footer .footer-logo {
   min-width: 100px;
 }
 
+/* Footer ## Footer Top / Social Icons */
 footer .social-icons-contain {
   display: flex;
-  gap: .5rem;
+  gap: .95rem;
 }
 
 footer .social-icons-contain .icon {
-  width: 40px;
+  min-width: 25px;
+  max-width: 25px;
   aspect-ratio: 1/1;
-  background-color: white;
+  transition: filter var(--animation-timing);
+}
+
+footer .social-icons-contain .icon:hover,
+footer .social-icons-contain .icon:active,
+footer .social-icons-contain .icon:focus-visible {
+  filter: var(--filter-opacity);
 }
 
 /* Footer ## Footer Middle */
@@ -687,7 +829,6 @@ footer .footer-middle-contain .wrapper {
 footer .footer-middle-contain ul {
   display: flex;
   flex-direction: column;
-  /* gap: 1rem */
 }
 
 footer .footer-middle-contain li::before {
@@ -715,9 +856,8 @@ footer .footer-bottom-contain {
 
 @media only screen and (min-width: 530px) {
   .middle-header-contain .buttons-contain {
-    column-gap: .75rem;
+    column-gap: .5rem;
     flex-direction: row;
-    column-gap: .75rem;
   }
 
   .menu-column {
@@ -728,6 +868,7 @@ footer .footer-bottom-contain {
     overflow-x: hidden;
     overflow-y: scroll;
   }
+
 
 }
 
@@ -745,13 +886,24 @@ footer .footer-bottom-contain {
   }
 
   .middle-header-contain .buttons-contain {
-    column-gap: .75rem;
+    column-gap: .5rem;
     flex-direction: row;
   }
 
   .site-branding .site-logo {
     width: 100%;
   }
+
+  .cta-content-wrapper {
+    flex-direction: row;
+  }
+
+  .cta-content-wrapper .cta-action-contain {
+    min-width: 35%;
+    margin-left: 2em;
+  }
+
+
 
   footer .footer-top-contain {
     display: flex;
@@ -779,6 +931,11 @@ footer .footer-bottom-contain {
     padding-top: 6em;
     flex-direction: row;
   }
+
+  .cta-logo-parent {
+    background-position: 50% 50%;
+  }
+
 }
 
 
@@ -789,8 +946,7 @@ footer .footer-bottom-contain {
   }
 
   a.btn-primary {
-    font-size: 1rem;
-    padding: .75rem 1.25rem;
+    padding: .5rem 1rem;
   }
 
   .middle-header-contain .buttons-contain {
@@ -800,6 +956,10 @@ footer .footer-bottom-contain {
 
   footer .footer-middle-contain li::before {
     content: "\00a0\00a0\00a0\00a0|\00a0\00a0\00a0\00a0";
+  }
+
+  .cta-logo-parent {
+    right: 15%;;
   }
 
 }
