@@ -635,8 +635,10 @@ nav.hamburger-contain {
 /* Main ## */
 /* Main ## Skew Text Titles */
 .skew-title-text-container {
-  padding-block: .5em;
+  padding-block: .25em;
+  width: 100%;
 }
+
 .replace-title {
   /* remove title visibility but keep in DOM */
   opacity: 0;
@@ -644,6 +646,14 @@ nav.hamburger-contain {
   margin: 0;
   padding: 0;
 }
+
+/* Main ## Dotted Line */
+.dotted-line {
+  border-bottom: var(--border-style-dotted-black);
+  margin-bottom: .5em;
+  width: 100%;
+}
+
 
 /* Main ## CTA banners */
 main .cta-contain {

@@ -85,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Append span of skew title letters to respective elementToReplace
       elementToReplace.appendChild(span);
-      console.log('elementToReplace ===>', elementToReplace);
     }
 
   });
