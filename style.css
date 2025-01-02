@@ -30,6 +30,9 @@
   --theme-font-weight-link: 500;
 
   /* Border */
+  --border-style-solid-yellow: 2px solid #FFD800;
+  --border-style-solid-black: 2px solid #09090C;
+  --border-style-solid-white: 2px solid #ffffff;
   --border-style-dotted-black: 2px dotted #09090C;
   --border-style-dotted-white: 2px dotted #ffffff;
   --border-style-black: 2px solid #09090C;
@@ -189,7 +192,19 @@ body {
 }
 
 .gray-bg {
+  background-color: var(--background-gray-color);
+}
+
+.dark-gray-bg {
   background-color: var(--primary-gray-color);
+}
+
+.gold-bg {
+  background-color: var(--background-gold-color);
+}
+
+.pure-white-bg {
+  background-color: white;
 }
 
 /* Links ## */
@@ -264,28 +279,29 @@ h5,
 
 h1,
 .h1 {
-  font-size: 5.5rem;
-  line-height: 4.85rem;
-}
-
-.entry-title,
-h2,
-.h2 {
   font-size: 4.5rem;
   line-height: 3.85rem;
 }
 
-h3,
-.h3 {
+h2,
+.entry-title,
+.h2 {
   font-size: 3.25rem;
   line-height: 3rem;
   margin-bottom: .25rem;
 }
 
-h4,
-.h4 {
+h3,
+.h3 {
   font-size: 2.75rem;
   line-height: 2.5rem;
+  margin-bottom: .25rem;
+}
+
+h4,
+.h4 {
+  font-size: 2.5rem;
+  line-height: 2.25rem;
   margin-bottom: .25rem;
 }
 
@@ -327,17 +343,15 @@ time,
   background-position: -450px 0%;
   background-repeat: no-repeat;
   transition: background-position var(--animation-timing);
+  overflow-wrap: break-word;
 }
 
 .byline a,
 .cat-links a {
-  display: inline-block;
   font-size: small;
   text-decoration: none;
   text-transform: uppercase;
   padding-inline: .5rem;
-  word-break: break-all;
-  text-wrap: wrap;
 }
 
 .byline:hover,
@@ -698,7 +712,8 @@ nav.hamburger-contain {
   transition-timing-function: ease;
   background-color: var(--primary-black-color);
   overflow: visible;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .offcanvas-mega-menu.active .wrapper {
@@ -734,12 +749,11 @@ nav.hamburger-contain {
 
 .menu-column .menu-title {
   font-family: var(--theme-font-family-body);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
-.menu-column li.h1>a {
+.menu-column li.h2>a {
   font-family: var(--theme-font-family-heading);
-  line-height: 4.5rem;
   padding: 0;
   margin: 0;
 }
@@ -778,6 +792,13 @@ nav.hamburger-contain {
   max-height: 0;
   margin: 0;
   padding: 0;
+}
+
+/* Main ## Solid Line */
+.solid-line {
+  border-bottom: var(--border-style-solid-black);
+  margin-bottom: .5em;
+  width: 100%;
 }
 
 /* Main ## Dotted Line */
@@ -1022,17 +1043,73 @@ section.styleguide-section {
   width: 100%;
 }
 
-/* Styleguide ## Titles */
+/* Styleguide ## Colors */
+.colors-contain {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-block: .5rem;
+}
+
+.colors-contain>* {
+  display: grid;
+  text-align: center;
+  width: 100%;
+  padding: .5rem 2rem;
+}
+
+.colors-contain>.white-bg,
+.colors-contain>.pure-white-bg {
+  border: var(--border-style-dotted-black);
+}
+
+.colors-contain span:first-child {
+  font-weight: bolder;
+}
+
+.colors-contain span:last-child {
+  font-size: .75rem;
+}
+
+/* Styleguide ## Title and Description */
+.styleguide-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-block: .5rem;
+  overflow-wrap: break-word;
+}
+
 .styleguide-title {
   font-family: var(--theme-font-family-link);
   font-size: x-small;
   text-transform: uppercase;
-  padding-block: .35rem;
   background-color: var(--hover-yellow-color);
+  border: var(--border-style-solid-yellow);
   width: max-content;
-  padding-inline: .5rem;
-  margin-top: 1em;
-  margin-bottom: .5em;
+  padding: .25rem;
+}
+
+.styleguide-link,
+.styleguide-desc {
+  font-family: var(--theme-font-family-link);
+  font-size: x-small;
+  border: var(--border-style-solid-yellow);
+  background-color: white;
+  width: max-content;
+  padding: .25rem;
+  cursor: pointer;
+  transition: background-color var(--animation-timing);
+}
+
+.styleguide-cont a {
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.styleguide-link:hover {
+  background-color: var(--hover-yellow-color);
 }
 
 /* Media Queries ## */
@@ -1055,12 +1132,44 @@ section.styleguide-section {
     overflow-y: scroll;
   }
 
+  .styleguide-cont {
+    flex-direction: row;
+    justify-content: start;
+  }
 
+  .colors-contain {
+    flex-direction: row;
+  }
 }
 
 @media only screen and (min-width: 782px) {
   .desktop-only {
     display: inherit;
+  }
+
+  h1,
+  .h1 {
+    font-size: 5.5rem;
+    line-height: 4.85rem;
+  }
+
+  .entry-title,
+  h2,
+  .h2 {
+    font-size: 4.5rem;
+    line-height: 3.85rem;
+  }
+
+  h3,
+  .h3 {
+    font-size: 3.25rem;
+    line-height: 3rem;
+  }
+
+  h4,
+  .h4 {
+    font-size: 2.75rem;
+    line-height: 2.5rem;
   }
 
   .btn-hamburger {
@@ -1069,6 +1178,10 @@ section.styleguide-section {
 
   .offcanvas-mega-menu {
     padding-top: 2.5em;
+  }
+
+  .offcanvas-mega-menu.active {
+    overflow: hidden;
   }
 
   .middle-header-contain .buttons-contain {
@@ -1088,7 +1201,6 @@ section.styleguide-section {
     min-width: 35%;
     margin-left: 2em;
   }
-
 
 
   footer .footer-top-contain {
