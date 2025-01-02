@@ -69,12 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
         span.style.fontWeight = fonts[2][1];
       }
 
-      if ( i === 6 || i === 7 || i === 8) {
-        span.style.fontFamily = fonts[3][0];
-        span.style.fontWeight = fonts[3][1];
-      }
-
-      if (i === 9 || i >= 10) {
+      if ( i === 6 || i >= 7) {
         span.style.fontFamily = fonts[3][0];
         span.style.fontWeight = fonts[3][1];
       }
