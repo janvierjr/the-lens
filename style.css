@@ -293,6 +293,19 @@ time,
 }
 
 /* Typography ## Specific / Byline Author + Category */
+.author-prefix,
+.cat-prefix img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-gold-color);
+  padding: .25rem;
+  border-radius: 20px;
+  width: 2rem;
+  aspect-ratio: 1/1;
+}
+
+
 .byline,
 .cat-links {
   display: inline-flex;
@@ -302,11 +315,11 @@ time,
   margin-bottom: .15rem;
   width: max-content;
   border-radius: 20px;
-  transition: background-position var(--animation-timing);
   background: linear-gradient(0deg, transparent 50%, var(--background-gold-color) 50%);
   background-size: 450px 80px;
   background-position: -450px 0%;
   background-repeat: no-repeat;
+  transition: background-position var(--animation-timing);
 }
 
 .byline a,
@@ -323,17 +336,58 @@ time,
   background-position: 100% 0%;
 }
 
-.author-prefix,
-.cat-prefix img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--background-gold-color);
-  padding: .25rem;
-  border-radius: 20px;
-  width: 2rem;
-  aspect-ratio: 1/1;
+/* Typography ## Specific / Yellow Category */
+.cat-links.yellow .cat-prefix img {
+  background-color: var(--hover-yellow-color);
 }
+
+.cat-links.yellow {
+  background: linear-gradient(0deg, transparent 50%, var(--hover-yellow-color) 50%);
+  background-size: 450px 80px;
+  background-position: -450px 0%;
+  background-repeat: no-repeat;
+  transition: background-position var(--animation-timing);
+}
+
+.cat-links.yellow:hover {
+  background-position: 100% 0%;
+}
+
+
+/* Typography ## Specific / Green Category */
+.cat-links.green .cat-prefix img {
+  background-color: var(--cta-green-color);
+}
+
+.cat-links.green {
+  background: linear-gradient(0deg, transparent 50%, var(--cta-green-color) 50%);
+  background-size: 450px 80px;
+  background-position: -450px 0%;
+  background-repeat: no-repeat;
+  transition: background-position var(--animation-timing);
+}
+
+.cat-links.green:hover {
+  background-position: 100% 0%;
+}
+
+/* Typography ## Specific / Red Category */
+.cat-links.red .cat-prefix img {
+  background-color: var(--cta-red-color);
+}
+
+.cat-links.red {
+  background: linear-gradient(0deg, transparent 50%, var(--cta-red-color) 50%);
+  background-size: 450px 80px;
+  background-position: -450px 0%;
+  background-repeat: no-repeat;
+  transition: background-position var(--animation-timing);
+}
+
+.cat-links.red:hover {
+  background-position: 100% 0%;
+}
+
 
 .small-text {
   font-size: smaller;
@@ -955,7 +1009,7 @@ footer .footer-bottom-contain {
 section.styleguide-section {
   display: flex;
   flex-direction: column;
-  padding-block: 2em;
+  padding-block: 1em;
   width: 100%;
 }
 
