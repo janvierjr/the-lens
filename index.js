@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // prevents page scroll with Mega Menu active / open
     page.classList.toggle('overflow-hidden');
+    // offCanvasMegaMenu.classList.toggle('overflow-visible');
   };
 
   hamburgerButton.addEventListener('click', handleHamburgerButtonClick);
@@ -41,7 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
     newHeader.classList.add('skew-text-header');
 
     const replaceText = elementToReplace.innerText; // select each .replace-text element's inner text from DOM
-    for (let i = 0; i < replaceText.length; i++) { // loop through each .replace-text inner text
+    for (let i = 0; i < replaceText.length; i++) {
+      // loop through each .replace-text inner text
       const letter = replaceText.charAt(i); // Each letter per element
       const span = document.createElement('span'); // create new span for each letter
       span.textContent = letter.toUpperCase(); // Uppercase each span with letter
@@ -69,18 +71,48 @@ document.addEventListener('DOMContentLoaded', function () {
         span.style.fontWeight = fonts[2][1];
       }
 
-      if ( i === 6 || i >= 7) {
+      if (i === 6 || i >= 7) {
         span.style.fontFamily = fonts[3][0];
         span.style.fontWeight = fonts[3][1];
       }
 
-      span.style.fontSize = '3.5rem';
-      span.style.lineHeight = '3rem';
-      span.setAttribute('aria-hidden', true)
+      span.style.fontSize = '2.5rem';
+      span.style.lineHeight = '2rem';
+      span.setAttribute('aria-hidden', true);
 
       // Append span of skew title letters to respective elementToReplace
       elementToReplace.appendChild(span);
     }
-
   });
+
+  //** Copy Hex color with class .copy-text to clipboard  */
+  const copyText = document.querySelectorAll('.copy-text');
+  for (const copied of copyText) {
+    copied.onclick = function () {
+      document.execCommand('copy'); // execCommand is deprecated but unsure of another method with similar execution
+    };
+    copied.addEventListener('copy', function (event) {
+      event.preventDefault();
+      const clickedText = event.target.textContent;
+
+      // Update text to show as 'copied' if clicked once - HEX code has 7 characters
+      if (clickedText.length < 8) {
+        if (event.clipboardData) {
+          event.clipboardData.setData('text/plain', copied.textContent);
+        }
+        event.target.textContent += ' copied';
+      } else {
+        // remove text of 'copied' if clicked twice and set clipboardData to only HEX code
+        event.target.textContent = event.target.textContent.slice(0, -7);
+        if (event.clipboardData) {
+          event.clipboardData.setData('text/plain', event.target.textContent);
+        }
+
+        console.log(
+          event.clipboardData.getData('text'),
+          'color copied to clipboard'
+        );
+      }
+    });
+  }
 });
