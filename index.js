@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /** Perspective Title - change font and weight per each new letter based on .skew-title-text-container elementToReplace class */
   const skewTitleTextContainer = document.querySelectorAll(
-    '.skew-title-text-container'
+    '.skew-title-text-contain'
   );
 
   skewTitleTextContainer.forEach((elementToReplace, i) => {
@@ -44,11 +44,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const replaceText = elementToReplace.innerText; // select each .replace-text element's inner text from DOM
     for (let i = 0; i < replaceText.length; i++) {
       // loop through each .replace-text inner text
-      const letter = replaceText.charAt(i); // Each letter per element
-      const span = document.createElement('span'); // create new span for each letter
-      span.textContent = letter.toUpperCase(); // Uppercase each span with letter
+      const letter = replaceText.charAt(i);
+      // create new span for with text of each letter uppercase
+      const span = document.createElement('span');
+      span.textContent = letter.toUpperCase();
 
-      // Apply fonts and weights in sequence based on index
+      // Apply fonts and weights in indexed sequence
       const fonts = [
         ['agenda-extra-condensed', 500],
         ['agenda-extra-condensed', 600],

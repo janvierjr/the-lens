@@ -781,7 +781,7 @@ nav.hamburger-contain {
 
 /* Main ## */
 /* Main ## Skew Text Titles */
-.skew-title-text-container {
+.skew-title-text-contain {
   padding-block: .25em;
   width: 100%;
 }
@@ -1055,7 +1055,7 @@ section.styleguide-section {
   display: grid;
   text-align: center;
   width: 100%;
-  padding: .5rem 2rem;
+  padding: .5rem 1rem;
 }
 
 .colors-contain>.white-bg,
@@ -1064,7 +1064,13 @@ section.styleguide-section {
 }
 
 .colors-contain span:first-child {
+  cursor: copy;
   font-weight: bolder;
+}
+.colors-contain span:first-child:focus-visible {
+  cursor: copy;
+  font-weight: bolder;
+  border: var(--border-style-dotted-white);
 }
 
 .colors-contain span:last-child {
@@ -1099,7 +1105,6 @@ section.styleguide-section {
   background-color: white;
   width: max-content;
   padding: .25rem;
-  cursor: pointer;
   transition: background-color var(--animation-timing);
 }
 
