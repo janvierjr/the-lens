@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //** Copy Hex color with class .copy-text to clipboard  */
   const copyText = document.querySelectorAll('.copy-text');
-  for (const copied of copyText) {
+  for (let copied of copyText) {
     copied.onclick = function () {
       document.execCommand('copy'); // execCommand is deprecated but unsure of another method with similar execution
     };
@@ -97,11 +97,18 @@ document.addEventListener('DOMContentLoaded', function () {
       const clickedText = event.target.textContent;
 
       // Update text to show as 'copied' if clicked once - HEX code has 7 characters
-      if (clickedText.length < 8) {
+      if (clickedText.length === 7) {
         if (event.clipboardData) {
           event.clipboardData.setData('text/plain', copied.textContent);
         }
         event.target.textContent += ' copied';
+      } else if (clickedText.toUpperCase() === 'COPY LINK') {
+        if (event.clipboardData) {
+          event.clipboardData.setData(
+            'text/plain',
+            this.parentElement.getAttribute('data-href-copied')
+          );
+        }
       } else {
         // remove text of 'copied' if clicked twice and set clipboardData to only HEX code
         event.target.textContent = event.target.textContent.slice(0, -7);
@@ -109,11 +116,11 @@ document.addEventListener('DOMContentLoaded', function () {
           event.clipboardData.setData('text/plain', event.target.textContent);
         }
 
-        console.log(
-          event.clipboardData.getData('text'),
-          'color copied to clipboard'
-        );
       }
+      console.log(
+        event.clipboardData.getData('text'),
+        ' copied to clipboard'
+      );
     });
   }
 });
