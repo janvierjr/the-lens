@@ -108,6 +108,15 @@ document.addEventListener('DOMContentLoaded', function () {
             'text/plain',
             this.parentElement.getAttribute('data-href-copied')
           );
+          event.target.textContent += ' COPIED';
+        }
+      } else if (clickedText.toUpperCase() === 'COPY LINK COPIED') {
+        event.target.textContent = event.target.textContent.slice(0, -7);
+        if (event.clipboardData) {
+          event.clipboardData.setData(
+            'text/plain',
+            this.parentElement.getAttribute('data-href-copied')
+          );
         }
       } else {
         // remove text of 'copied' if clicked twice and set clipboardData to only HEX code
@@ -115,12 +124,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (event.clipboardData) {
           event.clipboardData.setData('text/plain', event.target.textContent);
         }
-
       }
-      console.log(
-        event.clipboardData.getData('text'),
-        ' copied to clipboard'
-      );
+      console.log(event.clipboardData.getData('text'), ' copied to clipboard');
     });
   }
 });
