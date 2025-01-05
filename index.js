@@ -99,20 +99,30 @@ document.addEventListener('DOMContentLoaded', function () {
       // Update text to show as 'copied' if clicked once - HEX code has 7 characters
       if (clickedText.length === 7) {
         if (event.clipboardData) {
+          // clip copy Hex Code Text
           event.clipboardData.setData('text/plain', copied.textContent);
         }
+        // append ' copied' to read '<Hex Code> copied'
         event.target.textContent += ' copied';
+
+        // if .copy-text is 'COPY LINK' - i.e. copy article button text
       } else if (clickedText.toUpperCase() === 'COPY LINK') {
+        console.log('this -', this.innerHTML);
         if (event.clipboardData) {
+          // clip copy parent custom attribute 'data-href-copied' - i.e. url of article
           event.clipboardData.setData(
             'text/plain',
             this.parentElement.getAttribute('data-href-copied')
           );
-          event.target.textContent += ' COPIED';
+          // append ✔
+          event.target.innerHTML += ` &#10004;`;
         }
-      } else if (clickedText.toUpperCase() === 'COPY LINK COPIED') {
-        event.target.textContent = event.target.textContent.slice(0, -7);
+        // if .copy-text is 'COPY LINK ✔' - i.e. copy article button text
+      } else if (clickedText.toUpperCase() === 'COPY LINK ✔') {
+        // remove a space and ✔
+        event.target.textContent = event.target.innerHTML.slice(0, -2);
         if (event.clipboardData) {
+          // clip copy parent custom attribute 'data-href-copied' - i.e. url of article
           event.clipboardData.setData(
             'text/plain',
             this.parentElement.getAttribute('data-href-copied')
