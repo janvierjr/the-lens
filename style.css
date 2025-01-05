@@ -149,6 +149,12 @@ body {
   width: 1200px;
 }
 
+.wrapper-cont {
+  margin-inline: auto;
+  max-width: 90vw;
+  width: 1200px;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -803,7 +809,7 @@ nav.hamburger-contain {
 .menu-column li>a:hover,
 .menu-column li>a:active,
 .menu-column li>a:focus-visible {
-  margin-left: 10px;
+  margin-left: 5px;
   color: var(--hover-yellow-color);
 }
 
@@ -822,20 +828,34 @@ nav.hamburger-contain {
   padding: 0;
 }
 
-/* Main ## Solid Line */
-.solid-line {
+/* Main ## Line */
+
+
+/* Main ## Line / Solid Line */
+.solid-line,
+hr.solid-line {
+  border: none;
   border-bottom: var(--border-style-solid-black);
   margin-bottom: .5em;
   width: 100%;
 }
 
-/* Main ## Dotted Line */
-.dotted-line {
+/* Main ## Line / Dotted Line */
+.dotted-line,
+hr.dotted-line {
+  border:none;
   border-bottom: var(--border-style-dotted-black);
   margin-bottom: .5em;
   width: 100%;
 }
 
+/* Main ## Line / Block Separator Line  */
+.block-separator,
+hr.block-separator {
+  border: var(--border-style-solid-black);
+  margin: 2rem auto;
+  width: 200px;
+}
 
 /* Main ## CTA banners */
 main .cta-contain {

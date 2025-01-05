@@ -249,10 +249,10 @@
         </div>
       </header>
       <main>
-        <div class="wrapper">
-          <section class="styleguide-section">
+        <section class="styleguide-section">
+          <div class="wrapper-cont">
             <p class="define">color</p>
-            <div class="solid-line"></div>
+            <hr class="solid-line">
             <div class="styleguide-cont">
               <p class="styleguide-title">CTA Colors</p>
               <span class="styleguide-desc"
@@ -304,10 +304,13 @@
               </div>
               <!-- .colors-contain -->
             </div>
-          </section>
-          <section class="styleguide-section">
+            <!-- .wrapper-cont -->
+          </div>
+        </section>
+        <section class="styleguide-section">
+          <div class="wrapper-cont">
             <p class="define">typography</p>
-            <div class="solid-line"></div>
+            <hr class="solid-line" />
             <div class="styleguide-cont">
               <p class="styleguide-title">Category Tag Types</p>
               <a
@@ -320,26 +323,25 @@
               </a>
               <!-- .styleguide-cont -->
             </div>
-            <div>
-              <div class="cat-links yellow">
-                <span class="cat-prefix"
-                  ><img src="/assets/icons/right-arrow.svg" alt=""
-                /></span>
-                <a href="https://thelensnola.org/category/">Yellow Category</a>
-              </div>
-              <div class="cat-links green">
-                <span class="cat-prefix"
-                  ><img src="/assets/icons/right-arrow.svg" alt=""
-                /></span>
-                <a href="https://thelensnola.org/category/">Green Category</a>
-              </div>
-              <div class="cat-links red">
-                <span class="cat-prefix"
-                  ><img src="/assets/icons/right-arrow.svg" alt=""
-                /></span>
-                <a href="https://thelensnola.org/category/">Red Category</a>
-              </div>
+            <div class="cat-links yellow">
+              <span class="cat-prefix"
+                ><img src="/assets/icons/right-arrow.svg" alt=""
+              /></span>
+              <a href="https://thelensnola.org/category/">Yellow Category</a>
             </div>
+            <div class="cat-links green">
+              <span class="cat-prefix"
+                ><img src="/assets/icons/right-arrow.svg" alt=""
+              /></span>
+              <a href="https://thelensnola.org/category/">Green Category</a>
+            </div>
+            <div class="cat-links red">
+              <span class="cat-prefix"
+                ><img src="/assets/icons/right-arrow.svg" alt=""
+              /></span>
+              <a href="https://thelensnola.org/category/">Red Category</a>
+            </div>
+
             <div class="styleguide-cont">
               <p class="styleguide-title">Byline / Author Type</p>
               <a
@@ -405,7 +407,7 @@
             <div class="styleguide-cont">
               <p class="styleguide-title">Custom Skew Header</p>
               <span class="styleguide-desc"
-                >CLASS SELECTOR:&nbsp; .skew-title-text-contain &nbsp;
+                >CLASS SELECTOR:&nbsp; .skew-title-text-contain &nbsp;>&nbsp;
                 h2.replace-title</span
               >
               <!-- .styleguide-cont -->
@@ -414,25 +416,61 @@
               <h2 class="replace-title">Latest News</h2>
               <!-- .skew-title-text-container -->
             </div>
-            <div class="dotted-line"></div>
+            <hr class="dotted-line">
             <div class="skew-title-text-contain">
               <h2 class="replace-title">Opinion</h2>
               <!-- .skew-title-text-container -->
             </div>
-            <div class="dotted-line"></div>
+            <hr class="dotted-line">
             <div class="skew-title-text-contain">
               <h2 class="replace-title">Popular</h2>
               <!-- .skew-title-text-container -->
             </div>
-            <div class="dotted-line"></div>
-            <!-- .styleguide-section -->
-          </section>
-          <!-- .wrapper -->
-        </div>
+            <hr class="dotted-line">
+            <!-- .wrapper-cont -->
+          </div>
+          <!-- .styleguide-section -->
+        </section>
+
         <section class="styleguide-section">
-          <div class="wrapper">
+          <div class="wrapper-cont">
+            <p class="define">Lines</p>
+            <hr class="solid-line" />
+            <div class="styleguide-cont">
+              <p class="styleguide-title">Dotted Line</p>
+              <span class="styleguide-desc"
+                >CLASS SELECTOR:&nbsp; .dotted-line
+                &nbsp;OR&nbsp; hr.dotted-line</span
+              >
+              <!-- .styleguide-cont -->
+            </div>
+            <hr class="dotted-line">
+            <div class="styleguide-cont">
+              <p class="styleguide-title">Solid Line</p>
+              <span class="styleguide-desc"
+                >CLASS SELECTOR:&nbsp; .solid-line
+                &nbsp;OR&nbsp; hr.solid-line</span
+              >
+              <!-- .styleguide-cont -->
+            </div>
+            <hr class="solid-line">
+            <div class="styleguide-cont">
+              <p class="styleguide-title">Block Separator Line</p>
+              <span class="styleguide-desc"
+                >CLASS SELECTOR:&nbsp; .block-separator
+                &nbsp;OR&nbsp; hr.block-separator</span
+              >
+              <!-- .styleguide-cont -->
+            </div>
+            <hr class="block-separator">
+            <!-- .wrapper-cont -->
+          </div>
+        </section>
+
+        <section class="styleguide-section">
+          <div class="wrapper-cont">
             <p class="define">Full-width Banner CTAs</p>
-            <div class="solid-line"></div>
+            <hr class="solid-line">
           </div>
           <div class="cta-contain black-bg">
             <div class="cta-content-wrapper">
@@ -458,7 +496,8 @@
               <div class="cta-column-contain">
                 <h3 class="cta-title">Subscribe to Our Email Newsletter</h3>
                 <p class="cta-body">
-                  Sign up for our newsletter to stay updated about the biggest issues facing New Orleans and the Gulf South.
+                  Sign up for our newsletter to stay updated about the biggest
+                  issues facing New Orleans and the Gulf South.
                 </p>
                 <a class="btn-primary" href="/">Sign me up</a>
               </div>
