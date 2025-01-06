@@ -26,6 +26,7 @@
 
   /* Fonts */
   --theme-font-family-heading: "agenda-ultra-condensed", sans-serif;
+  --theme-font-family-agenda: "agenda", sans-serif;
   --theme-font-weight-heading: 500;
   --theme-font-family-body: "Inter", sans-serif;
   --theme-font-family-link: "Unbounded", sans-serif;
@@ -177,6 +178,14 @@ body {
   display: none;
 }
 
+.w-content {
+  width: max-content;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
 
 /* Utility Classes ## Background Colors */
 .black-bg {
@@ -223,6 +232,7 @@ a {
 
 /* Links ## Buttons */
 a.btn-primary {
+  display: inline-block;
   text-transform: uppercase;
   font-size: .85rem;
   text-decoration: none;
@@ -243,13 +253,9 @@ a.btn-primary:focus-visible {
 /* Links ## Dark Background - Buttons */
 .black-bg a.btn-primary,
 .dark-bg a.btn-primary {
-  text-transform: uppercase;
-  text-decoration: none;
   border: var(--border-style-white);
+  color: var(--text-white-color);
   border-radius: var(--border-radius-button);
-  padding: .5rem 1rem;
-  margin-block: auto;
-  text-align: center;
   transition: background-color var(--animation-timing),
     color var(--animation-timing),
     border var(--animation-timing);
@@ -270,12 +276,7 @@ a.btn-primary:focus-visible {
 .yellow-bg a.btn-primary,
 .red-bg a.btn-primary,
 .green-bg a.btn-primary {
-  text-transform: uppercase;
-  text-decoration: none;
   border-radius: var(--border-radius-button);
-  padding: .5rem 1rem;
-  margin-block: auto;
-  text-align: center;
   transition: background-color var(--animation-timing),
     color var(--animation-timing);
 }
@@ -293,6 +294,104 @@ a.btn-primary:focus-visible {
   background-color: var(--primary-white-color);
 }
 
+/* Links ## Sharedaddy Social Buttons */
+.sharedaddy .sd-sharing {
+  margin-bottom: 1em;
+}
+
+.sharedaddy .sd-title {
+  font-family: var(--theme-font-family-body);
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+.sharedaddy .sd-content {
+  display: flex;
+  align-items: center;
+}
+
+.sharedaddy .sd-content ul {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.sd-content ul li {
+  display: inline-block;
+  position: relative;
+  margin: 0 8px 12px 0;
+  padding: 0;
+}
+
+.sd-social-icon-text ul li button.sd-button:before,
+.sd-social-icon-text ul li a.sd-button:before {
+  display: inline-block;
+  position: relative;
+  top: -7px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* font: normal 18px / 1 social-logos; */
+  height: 5px;
+  margin-right: .5rem;
+  text-align: center;
+  vertical-align:middle;
+
+}
+
+.sd-content ul li.share-copy-link button,
+.sd-content ul li.share-copy-link a {
+  background-color: transparent;
+  cursor:copy !important;
+}
+
+.sd-content ul li.share-copy-link button:before,
+.sd-content ul li.share-copy-link a:before {
+  content: url(assets/icons/share/link-solid.svg);
+}
+
+.sd-content ul li.share-bluesky a:before {
+  content: url(assets/icons/share/bluesky.svg);
+}
+
+.sd-content ul li.share-facebook a:before {
+  content: url(assets/icons/share/facebook.svg);
+  top: -9px;
+  /* UPDATE CONTENT PRODUCTION TO BELOW */
+  /* content: "\f203"; */
+}
+
+.sd-content ul li.share-x a:before {
+  content: url(assets/icons/share/x.svg);
+  /* UPDATE CONTENT PRODUCTION TO BELOW */
+  /* content: "\f10e"; */
+}
+
+.sharedaddy button.sd-button,
+.sharedaddy a.sd-button {
+  margin-block: auto;
+  border-radius: 20px;
+  border: var(--border-style-solid-black);
+  color: var(--primary-black-color);
+  display: inline-block;
+  font-family: var(--theme-font-family-agenda);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: .25rem .65rem;
+  text-decoration: none !important;
+  text-shadow: none;
+  transition: filter var(--animation-timing), background-color var(--animation-timing);
+}
+
+.sharedaddy button.sd-button:hover,
+.sharedaddy button.sd-button:active,
+.sharedaddy button.sd-button:focus-visible,
+.sharedaddy a.sd-button:hover,
+.sharedaddy a.sd-button:active,
+.sharedaddy a.sd-button:focus-visible {
+  filter: var(--filter-opacity);
+  background-color: var(--text-white-color);
+}
 /* Typography ## */
 /* Typography ## Headers */
 
@@ -843,7 +942,7 @@ hr.solid-line {
 /* Main ## Line / Dotted Line */
 .dotted-line,
 hr.dotted-line {
-  border:none;
+  border: none;
   border-bottom: var(--border-style-dotted-black);
   margin-bottom: .5em;
   width: 100%;
@@ -867,6 +966,7 @@ main .cta-contain {
 .cta-contain.black-bg {
   background-image: var(--black-gray-linear-gradient);
 }
+
 .cta-contain.yellow-bg {
   background-image: var(--yellow-gray-linear-gradient);
 }
@@ -1121,6 +1221,7 @@ section.styleguide-section {
   cursor: copy;
   font-weight: bolder;
 }
+
 .colors-contain span:first-child:focus-visible {
   cursor: copy;
   font-weight: bolder;
@@ -1262,7 +1363,7 @@ section.styleguide-section {
     margin-right: auto;
   }
 
-    /* .cta-content-wrapper .cta-body {
+  /* .cta-content-wrapper .cta-body {
       max-width: 90%;
     } */
 
