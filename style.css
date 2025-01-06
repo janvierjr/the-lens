@@ -334,14 +334,14 @@ a.btn-primary:focus-visible {
   height: 5px;
   margin-right: .5rem;
   text-align: center;
-  vertical-align:middle;
+  vertical-align: middle;
 
 }
 
 .sd-content ul li.share-copy-link button,
 .sd-content ul li.share-copy-link a {
   background-color: transparent;
-  cursor:copy !important;
+  cursor: copy !important;
 }
 
 .sd-content ul li.share-copy-link button:before,
@@ -366,8 +366,8 @@ a.btn-primary:focus-visible {
   /* content: "\f10e"; */
 }
 
-.sharedaddy button.sd-button,
-.sharedaddy a.sd-button {
+button.sd-button,
+a.sd-button {
   margin-block: auto;
   border-radius: 20px;
   border: var(--border-style-solid-black);
@@ -383,15 +383,35 @@ a.btn-primary:focus-visible {
   transition: filter var(--animation-timing), background-color var(--animation-timing);
 }
 
-.sharedaddy button.sd-button:hover,
-.sharedaddy button.sd-button:active,
-.sharedaddy button.sd-button:focus-visible,
-.sharedaddy a.sd-button:hover,
-.sharedaddy a.sd-button:active,
-.sharedaddy a.sd-button:focus-visible {
+
+button.sd-button:hover,
+button.sd-button:active,
+button.sd-button:focus-visible,
+a.sd-button:hover,
+a.sd-button:active,
+a.sd-button:focus-visible {
   filter: var(--filter-opacity);
   background-color: var(--text-white-color);
 }
+
+/* Links ##  Social Buttons / Black Background */
+.black-bg button.sd-button,
+.black-bg a.sd-button {
+  filter: invert(100%);
+  transition: filter var(--animation-timing), background-color var(--animation-timing);
+}
+
+.black-bg button.sd-button:hover,
+.black-bg button.sd-button:active,
+.black-bg button.sd-button:focus-visible,
+.black-bg a.sd-button:hover,
+.black-bg a.sd-button:active,
+.black-bg a.sd-button:focus-visible {
+  filter: var(--filter-opacity);
+  background-color: var(--text-white-color);
+}
+
+
 /* Typography ## */
 /* Typography ## Headers */
 
