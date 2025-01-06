@@ -186,6 +186,19 @@ body {
   padding: 1rem;
 }
 
+.d-flex {
+  display: flex;
+}
+
+/* Utility Classes ## Text Alignment */
+.text-align-end {
+  text-align: end;
+}
+
+.text-align-start {
+  text-align: start;
+}
+
 
 /* Utility Classes ## Background Colors */
 .black-bg {
@@ -741,6 +754,7 @@ nav.hamburger-contain {
   width: 3.5rem;
   height: 3.5rem;
   margin: auto 0;
+  border: var(--border-style-solid-white);
   border-radius: 100%;
   background-color: var(--primary-black-color);
   transform: skew(0deg);
@@ -940,7 +954,7 @@ nav.hamburger-contain {
 /* Main ## Skew Text Titles */
 .skew-title-text-contain {
   padding-block: .25em;
-  width: 100%;
+  width: max-content;
 }
 
 .replace-title {
@@ -979,6 +993,8 @@ hr.block-separator {
   margin: 2rem auto;
   width: 200px;
 }
+
+
 
 /* Main ## CTA banners */
 main .cta-contain {
@@ -1066,6 +1082,125 @@ main .cta-contain {
   /* background-color: var(--primary-black-color); */
 }
 
+/* Main ## Photo Journalism Block banners */
+main .wide-angle-contain,
+main .short-focus-contain {
+  width: 100vw;
+  position: relative;
+  margin-block: .15em;
+  padding-block: 3em;
+}
+
+/* border-top color for banner */
+main .short-focus-contain {
+  border-top: .5rem solid var(--cta-red-color);
+}
+
+main .wide-angle-contain {
+  border-top: .5rem solid var(--cta-green-color);
+}
+
+/* red lens capture logomark */
+main .short-focus-contain .lens-capture-mark {
+  width: 50px;
+  aspect-ratio: 1/1;
+  margin-left: 1rem;
+  background-image: url(/assets/icons/red-lens-capture-mark.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 10%;
+  background-size: contain;
+}
+
+
+/* green lens capture logomark */
+main .wide-angle-contain .lens-capture-mark {
+  width: 50px;
+  aspect-ratio: 1/1;
+  margin-left: 1rem;
+  background-image: url(/assets/icons/green-lens-capture-mark.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 10%;
+  background-size: contain;
+}
+
+.wide-angle-contain p,
+.short-focus-contain p {
+  color: var(--text-white-color);
+  margin-bottom: 1rem;
+}
+
+.short-focus-contain .wrapper-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 2rem;
+  row-gap: 1rem;
+  margin-inline: auto;
+  max-width: 90vw;
+  width: 1200px;
+}
+
+.wide-angle-contain .wrapper-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  margin-inline: auto;
+  max-width: 90vw;
+  width: 1200px;
+}
+
+
+
+.short-focus-contain .img-link {
+  position: relative;
+  min-width: 300px;
+}
+
+.wide-angle-contain .img-link {
+  position: relative;
+  min-width: auto;
+}
+
+.wide-angle-contain .img-link>img,
+.short-focus-contain .img-link>img {
+  transition: filter var(--animation-timing);
+  width: 100%;
+}
+
+.wide-angle-contain .img-link>img:hover,
+.short-focus-contain .img-link>img:hover {
+  filter: brightness(1.3);
+  -webkit-filter: brightness(1.3);
+}
+
+/* Main ## Photo Journalism Block banners / Yellow Arrow Right */
+.wide-angle-contain .img-link .yellow-arrow-right,
+.short-focus-contain .img-link .yellow-arrow-right {
+  position: absolute;
+  bottom: 8%;
+  left: 80%;
+  width: 25px;
+  height: 25px;
+  background-image: url(/assets/icons/yellow-arrow-right.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  z-index: 2;
+  transition: left var(--animation-timing);
+}
+
+.short-focus-contain .img-link:has(img:hover) .yellow-arrow-right {
+  left: 85%;
+}
+
+.wide-angle-contain .img-link .yellow-arrow-right {
+  bottom: 8%;
+  left: 90%;
+}
+
+.wide-angle-contain .img-link:has(img:hover) .yellow-arrow-right {
+  left: 93%;
+}
 
 /* Footer ## */
 footer.site-footer {
@@ -1324,6 +1459,8 @@ section.styleguide-section {
   .colors-contain {
     flex-direction: row;
   }
+
+
 }
 
 @media only screen and (min-width: 782px) {
@@ -1420,6 +1557,11 @@ section.styleguide-section {
 
   .cta-logo-parent {
     background-position: 50% 50%;
+  }
+
+  .wide-angle-contain .wrapper-grid {
+    grid-template-columns: 1fr auto;
+
   }
 
 }
