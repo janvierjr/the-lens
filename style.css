@@ -295,22 +295,22 @@ a.btn-primary:focus-visible {
 }
 
 /* Links ## Sharedaddy Social Buttons */
-.sharedaddy .sd-sharing {
+.sd-sharing {
   margin-bottom: 1em;
 }
 
-.sharedaddy .sd-title {
+.sd-title {
   font-family: var(--theme-font-family-body);
   font-size: 1rem;
   line-height: 1.25rem;
 }
 
-.sharedaddy .sd-content {
+.sd-content {
   display: flex;
   align-items: center;
 }
 
-.sharedaddy .sd-content ul {
+.sd-content ul {
   list-style: none !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -395,6 +395,10 @@ a.sd-button:focus-visible {
 }
 
 /* Links ##  Social Buttons / Black Background */
+.black-bg .sd-title {
+  color: var(--text-white-color);
+}
+
 .black-bg button.sd-button,
 .black-bg a.sd-button {
   filter: invert(100%);
