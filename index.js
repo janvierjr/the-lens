@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // 0. function execution on click
   hamburgerButton.addEventListener('click', handleHamburgerButtonClick);
 
-  //** With the next two functions, one can add the class '.replace-title' to any header and each letter of that header will be replaced with a span styled to resemble a perspective skew. A parent element with the class of '.skew-title-text-contain' is required for the perspective skew styles to apply. Function 1. handleReplaceTitleParentChange will create the parent element if a header element with a class of '.replace-text' is a child of '.skew-title-text-contain'. Function 2. handleCreateSkewTextTitles will apply skew text styles via the parent: '.skew-title-text-contain. */
+  //** With the next two functions, one can add the class '.replace-title' to any header element and each letter of that header will be replaced with a span styled to resemble a perspective skew. A parent element with the class of '.skew-title-text-contain' is required for the perspective skew styles to apply. Function 1. handleReplaceTitleParentChange will create the parent element if a header element with a class of '.replace-text' is a child of '.skew-title-text-contain'. Function 2. handleCreateSkewTextTitles will apply skew text styles via the parent: '.skew-title-text-contain. */
 
   /** 1. Find .replace-title class and give parent of .skew-title-text-contain if without */
   function handleReplaceTitleParentChange() {
@@ -62,8 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
       '.skew-title-text-contain'
     );
     skewTitleTextContainer.forEach((elementToReplace, i) => {
-      console.log('elementToReplace ', elementToReplace);
-
       const replaceText = elementToReplace.innerText; // select each .replace-text element's inner text from DOM
       for (let i = 0; i < replaceText.length; i++) {
         // loop through each .replace-text inner text
