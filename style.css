@@ -1407,7 +1407,6 @@ section.styleguide-section {
   text-transform: uppercase;
   background-color: var(--hover-yellow-color);
   border: var(--border-style-solid-yellow);
-  width: max-content;
   padding: .25rem;
 }
 
@@ -1417,7 +1416,6 @@ section.styleguide-section {
   font-size: x-small;
   border: var(--border-style-solid-yellow);
   background-color: white;
-  width: max-content;
   padding: .25rem;
   transition: background-color var(--animation-timing);
 }
