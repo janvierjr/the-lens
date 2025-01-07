@@ -1186,6 +1186,7 @@ main .wide-angle-contain .lens-capture-mark {
   background-position: 50% 50%;
   background-size: contain;
   z-index: 2;
+  pointer-events: none;
   transition: left var(--animation-timing);
 }
 
