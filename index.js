@@ -107,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // if .copy-text is 'COPY LINK' - i.e. copy article button text
       } else if (clickedText.toUpperCase() === 'COPY LINK') {
-        console.log('this -', this.innerHTML);
         if (event.clipboardData) {
           // clip copy parent custom attribute 'data-href-copied' - i.e. url of article
           event.clipboardData.setData(
