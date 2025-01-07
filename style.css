@@ -512,15 +512,18 @@ time,
   display: inline-flex;
   position: relative;
   align-items: center;
+  line-height: 1rem;
+  font-family: var(--theme-font-family-link);
+  font-weight: var(--theme-font-weight-link);
   margin-top: .75rem;
   margin-bottom: .15rem;
-  width: max-content;
   border-radius: 20px;
   background: linear-gradient(0deg, transparent 50%, var(--background-gold-color) 50%);
   background-size: 450px 80px;
   background-position: -450px 0%;
   background-repeat: no-repeat;
   transition: background-position var(--animation-timing);
+  word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
